@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datetime: MyString
+  description: MyString
+
+two:
+  datetime: MyString
+  description: MyString
