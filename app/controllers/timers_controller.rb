@@ -2,7 +2,6 @@ class TimersController < ApplicationController
 
 
     def create 
-        byebug
         timer = Timer.new(timer_params)
 
         if timer.save
