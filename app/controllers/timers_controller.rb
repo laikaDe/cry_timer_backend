@@ -2,6 +2,7 @@ class TimersController < ApplicationController
 
 
     def create 
+        
         timer = Timer.new(timer_params)
 
         if timer.save

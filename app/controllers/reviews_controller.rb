@@ -5,18 +5,17 @@ class ReviewsController < ApplicationController
     end
     
     def create 
-        byebug
         review = Review.new(review_params)
 
         if review.save
             render json: review
         else
-            byebug
+            
         end
     end
 
     def review_params
-        params.require(:review).permit(:comment)
+        params.require(:review).permit(:comment, :timer_id)
     end
 
 end

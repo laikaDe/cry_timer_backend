@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_062458) do
+ActiveRecord::Schema.define(version: 2022_01_18_003810) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_062458) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "span"
   end
 
   add_foreign_key "reviews", "timers"
