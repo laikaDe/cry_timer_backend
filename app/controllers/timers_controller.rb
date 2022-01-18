@@ -6,13 +6,12 @@ class TimersController < ApplicationController
         timer = Timer.new(timer_params)
 
         if timer.save
-            render json: timer
+            render json: TimerSerializer.new(timer)
         end
     end
 
     def index
-        timers = Timer.all
-        render json: timers
+        render json: Timer.all.map {|timer| TimerSerializer.new(timer)}
     end
 
     private 
