@@ -14,6 +14,12 @@ class TimersController < ApplicationController
         render json: Timer.all.map {|timer| TimerSerializer.new(timer)}
     end
 
+    # def destroy
+    #     byebug
+    #     timer = Timer.find(params[:id])
+    #     timer.destroy
+    # end
+
     private 
 
     def timer_params
