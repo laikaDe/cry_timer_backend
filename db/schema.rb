@@ -10,23 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_024752) do
+ActiveRecord::Schema.define(version: 2022_01_22_233859) do
+
+  create_table "moods", force: :cascade do |t|
+    t.string "description"
+    t.datetime "datetime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.string "comment"
-    t.integer "timer_id", null: false
+    t.integer "mood_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["timer_id"], name: "index_reviews_on_timer_id"
+    t.index ["mood_id"], name: "index_reviews_on_mood_id"
   end
 
-  create_table "timers", force: :cascade do |t|
-    t.string "datetime"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "span"
-  end
-
-  add_foreign_key "reviews", "timers"
+  add_foreign_key "reviews", "moods"
 end

@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  rating: MyString
   comment: MyString
-  timer: one
+  mood: one
 
 two:
-  rating: MyString
   comment: MyString
-  timer: two
+  mood: two
