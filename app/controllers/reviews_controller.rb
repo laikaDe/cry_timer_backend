@@ -2,16 +2,18 @@ class ReviewsController < ApplicationController
 
     before_action :set_review, only: [:destroy]
 
+
     def index
         render json: Review.all
     end
 
-    def create
+
+    def create    
         review = Review.new(review_params)
 
         if review.save
             render json:review
-        else 
+        else
             byebug
         end
     end
@@ -22,7 +24,7 @@ class ReviewsController < ApplicationController
 
     private 
 
-    def set_review
+    def set_review 
         review = Review.find(params[:id])
     end
 
